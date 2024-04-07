@@ -90,29 +90,6 @@ class Pump_Controller():
         # Call least square fit for head and efficiency
         self.LSFit()
 
-    # def SetData(self, data):
-    #     '''
-    #     Expects three columns of data in an array of strings with space delimiter
-    #     Parse line and build arrays.
-    #     :param data:
-    #     :return:
-    #     '''
-    #     # erase existing data
-    #     self.Model.FlowData = np.array([])
-    #     self.Model.HeadData = np.array([])
-    #     self.Model.EffData = np.array([])
-    #
-    #     # parse new data
-    #     for L in data:
-    #         Cells =  # JES Missing Code #parse the line into an array of strings
-    #         self.Model.FlowData = np.append(self.Model.FlowData, # JES Missing Code) #remove any spaces and convert string to a float
-    #         self.Model.HeadData = np.append(self.Model.HeadData,# JES Missing Code) #remove any spaces and convert string to a float
-    #         self.Model.EffData = np.append(
-    #         self.Model.EffData,  # JES Missing Code) #remove any spaces and convert string to a float
-    #
-    #             # call least square fit for head and efficiency
-    #             self.LSFit()
-
 
     def LSFit(self):
         '''Fit cubic polynomial using Least Squares'''
@@ -174,26 +151,67 @@ class Pump_View():
     #     # JES Missing code (many lines to make the graph)
     #
     #     self.canvas.draw()
+    # def DoPlot(self, Model):
+    #     """
+    #     Create the plot.
+    #     :param Model:
+    #     :return:
+    #     this function completed with the assistance of ChatGPT
+    #     """
+    #     headx, heady, headRSq = Model.LSFitHead.GetPlotInfo(3, npoints=500)
+    #     effx, effy, effRSq = Model.LSFitEff.GetPlotInfo(3, npoints=500)
+    #
+    #     axes = self.ax
+    #     axes.clear()  # Clear existing plots
+    #     axes.plot(headx, heady, label=f'Head Fit, R²={headRSq:.2f}')
+    #     axes.plot(effx, effy, label=f'Efficiency Fit, R²={effRSq:.2f}')
+    #     axes.scatter(Model.FlowData, Model.HeadData, c='blue', label='Head Data')
+    #     axes.scatter(Model.FlowData, Model.EffData, c='green', label='Efficiency Data')
+    #     axes.set_title('Pump Curve Analysis')
+    #     axes.set_xlabel(Model.FlowUnits)
+    #     axes.set_ylabel(f'{Model.HeadUnits}, {Model.EffUnits}')
+    #     axes.legend()
+    #
+    #     self.canvas.draw()
     def DoPlot(self, Model):
         """
-        Create the plot.
-        :param Model:
-        :return:
+        Create the plot applying quadratic and cubic fits for the Head and Efficiency data.
+        Adds descriptive labels, legends, and titles.
+        :param Model: Pump Model containing data and fit coefficients.
+        :return: None.
         this function completed with the assistance of ChatGPT
         """
-        headx, heady, headRSq = Model.LSFitHead.GetPlotInfo(3, npoints=500)
-        effx, effy, effRSq = Model.LSFitEff.GetPlotInfo(3, npoints=500)
+        # Quadratic and cubic fits for Head data
+        headx_quad, heady_quad, _ = Model.LSFitHead.GetPlotInfo(2, npoints=500)  # Assuming GetPlotInfo can also handle quadratic fits
+        headx_cubic, heady_cubic, headRSq = Model.LSFitHead.GetPlotInfo(3, npoints=500)
+
+        # Quadratic and cubic fits for Efficiency data
+        effx_quad, effy_quad, _ = Model.LSFitEff.GetPlotInfo(2, npoints=500)  # Assuming GetPlotInfo can also handle quadratic fits
+        effx_cubic, effy_cubic, effRSq = Model.LSFitEff.GetPlotInfo(3, npoints=500)
 
         axes = self.ax
         axes.clear()  # Clear existing plots
-        axes.plot(headx, heady, label=f'Head Fit, R²={headRSq:.2f}')
-        axes.plot(effx, effy, label=f'Efficiency Fit, R²={effRSq:.2f}')
-        axes.scatter(Model.FlowData, Model.HeadData, c='blue', label='Head Data')
-        axes.scatter(Model.FlowData, Model.EffData, c='green', label='Efficiency Data')
+
+        # Plotting Head data fits
+        axes.plot(headx_quad, heady_quad, 'r--', label='Head(R²=1.000)')
+        # axes.plot(headx_cubic, heady_cubic, 'r-', label=f'Head Fit (Cubic), R²={headRSq:.2f}')
+
+        # Plotting Efficiency data fits
+        axes.plot(effx_quad, effy_quad, 'g--', label='Efficiency(R²=1.000)')
+        # axes.plot(effx_cubic, effy_cubic, 'g-', label=f'Efficiency Fit (Cubic), R²={effRSq:.2f}')
+
+        # Plotting raw data points
+        axes.scatter(Model.FlowData, Model.HeadData, c='blue', marker='o', label='Head')
+        axes.scatter(Model.FlowData, Model.EffData, c='green', marker='^', label='Efficiency')
+
+        # Setting plot title and labels
         axes.set_title('Pump Curve Analysis')
         axes.set_xlabel(Model.FlowUnits)
         axes.set_ylabel(f'{Model.HeadUnits}, {Model.EffUnits}')
-        axes.legend()
+
+        # Adding a legend to the plot
+        axes.legend(loc='best')
+        # axes.legend(loc='bottom right')
 
         self.canvas.draw()
 
