@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(696, 796)
+        Form.resize(900, 900)
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout.setObjectName("verticalLayout")
         self.GB_Input = QtWidgets.QGroupBox(Form)
@@ -20,7 +20,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.GB_Input.sizePolicy().hasHeightForWidth())
         self.GB_Input.setSizePolicy(sizePolicy)
-        self.GB_Input.setMaximumSize(QtCore.QSize(16777215, 135))
+        self.GB_Input.setMaximumSize(QtCore.QSize(16777215, 13500))
         self.GB_Input.setObjectName("GB_Input")
         self.gridLayout = QtWidgets.QGridLayout(self.GB_Input)
         self.gridLayout.setObjectName("gridLayout")

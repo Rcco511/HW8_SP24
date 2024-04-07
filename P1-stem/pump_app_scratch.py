@@ -13,7 +13,7 @@ import os
 
 # I built the gui as pump.ui and used pyuic5 to make pump.py
 from pump import Ui_Form
-from Pump_MVC import Pump_Controller
+from Pump_MVC_scratch import Pump_Controller
 #endregion
 
 #region class definitions
