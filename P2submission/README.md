@@ -1,0 +1,1 @@
+I think its working? i just filled in the "#JESMISSINGCODE" segments and fixed a few more hangups in the stems. It opens a window that is able to calculate results and display a plot but i havent checked any of the math or anything.
