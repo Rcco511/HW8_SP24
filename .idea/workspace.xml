@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e58fe4a2-2220-48a5-b14f-8e8fbc4cb5ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/P1-stem/pump_app_scratch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/HW8SP24.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HW8SP24.iml" afterDir="false" />
+    <list default="true" id="e58fe4a2-2220-48a5-b14f-8e8fbc4cb5ec" name="Changes" comment="Initial Commit Q1, Pump_app_scratch added">
+      <change afterPath="$PROJECT_DIR$/P1-stem/Pump_MVC_scratch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P1-stem/pump_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/P1-stem/pump_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P1-stem/pump_app_scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/P1-stem/pump_app_scratch.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,15 +34,16 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.pump_app.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jimsm/OneDrive - Oklahoma A and M System/osu/Teaching/2024/SP/MAE3403/Exams/X2_Students&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.pump_app.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/jimsm/OneDrive - Oklahoma A and M System/osu/Teaching/2024/SP/MAE3403/Exams/X2_Students",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -60,6 +60,19 @@
       <option name="presentableId" value="Default" />
       <updated>1712433235047</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit Q1, Pump_app_scratch added">
+      <option name="closed" value="true" />
+      <created>1712518844661</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712518844661</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit Q1, Pump_app_scratch added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit Q1, Pump_app_scratch added" />
   </component>
 </project>

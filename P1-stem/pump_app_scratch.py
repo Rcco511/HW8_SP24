@@ -3,6 +3,8 @@ import numpy as np
 import PyQt5.QtWidgets as qtw
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
 from matplotlib.figure import Figure
+from numpy import polyfit
+
 
 from pathlib import Path
 
@@ -30,7 +32,9 @@ class PumpCurve_GUI_Class(Ui_Form, qtw.QWidget):  #class for PumpCurve_GUI inher
         #add the canvas to the form (can't be done directly in qtdesigner)
         self.GL_Output.addWidget(self.canvas,5,0,1,4)
 
-        self.myPump=#JES Missing Code #create a pump controller object
+        # self.myPump=#JES Missing Code #create a pump controller object
+        self.myPump = Pump_Controller() #this function completed with the assistance of ChatGPT
+
         self.setViewWidgets() #pass along widgets to myPump for display
 
         #show the widget
@@ -66,18 +70,30 @@ class PumpCurve_GUI_Class(Ui_Form, qtw.QWidget):  #class for PumpCurve_GUI inher
             return False
 
     def OpenFile(self):
-        '''
-        This is the slot to open a dialog and search file system.
-        return True
-        :return: boolean for if the operation was successful.
-        '''
-        fname=#JES Missing Code # use qtw.QFileDialog.getOpenFileName
-        oTF=len(fname[0])>0
+        """this function completed with the assistance of ChatGPT"""
+        options = qtw.QFileDialog.Options()
+        fname, _ = qtw.QFileDialog.getOpenFileName(self, "Open Pump Data File", self.FilePath,
+                                                   "Text Files (*.txt);;All Files (*)", options=options)
+        oTF = len(fname) > 0
         if oTF:
-            self.FileName=fname[0]
-            self.FilePath=str(Path(fname[0]).parents[0])+'/'
+            self.FileName = fname
+            self.FilePath = str(Path(fname).parents[0]) + '/'
             self.TE_Filename.setText(self.FileName)
         return oTF
+
+    # def OpenFile(self):
+    #     '''
+    #     This is the slot to open a dialog and search file system.
+    #     return True
+    #     :return: boolean for if the operation was successful.
+    #     '''
+    #     fname=#JES Missing Code # use qtw.QFileDialog.getOpenFileName
+    #     oTF=len(fname[0])>0
+    #     if oTF:
+    #         self.FileName=fname[0]
+    #         self.FilePath=str(Path(fname[0]).parents[0])+'/'
+    #         self.TE_Filename.setText(self.FileName)
+    #     return oTF
 
     def Exit(self):
         qapp.exit()
