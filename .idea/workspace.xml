@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e58fe4a2-2220-48a5-b14f-8e8fbc4cb5ec" name="Changes" comment="Pump_MVC_scratch added">
+    <list default="true" id="e58fe4a2-2220-48a5-b14f-8e8fbc4cb5ec" name="Changes" comment="ran scratch with no major bugs, no plot still">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P1-stem/pump.py" beforeDir="false" afterPath="$PROJECT_DIR$/P1-stem/pump.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P1-stem/pump_app_scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/P1-stem/pump_app_scratch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P1-stem/Pump_MVC_scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/P1-stem/Pump_MVC_scratch.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,12 +76,21 @@
       <option name="project" value="LOCAL" />
       <updated>1712521106865</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ran scratch with no major bugs, no plot still">
+      <option name="closed" value="true" />
+      <created>1712521954202</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712521954202</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit Q1, Pump_app_scratch added" />
     <MESSAGE value="Pump_MVC_scratch added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pump_MVC_scratch added" />
+    <MESSAGE value="ran scratch with no major bugs, no plot still" />
+    <option name="LAST_COMMIT_MESSAGE" value="ran scratch with no major bugs, no plot still" />
   </component>
 </project>

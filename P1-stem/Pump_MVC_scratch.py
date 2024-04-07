@@ -161,17 +161,39 @@ class Pump_View():
         self.LE_EffCoefs.setText(Model.LSFitEff.GetCoeffsString())
         self.DoPlot(Model)
 
+    # def DoPlot(self, Model):
+    #     """
+    #     Create the plot.
+    #     :param Model:
+    #     :return:
+    #     """
+    #     headx, heady, headRSq = Model.LSFitHead.GetPlotInfo(3, npoints=500)
+    #     effx, effy, effRSq = Model.LSFitEff.GetPlotInfo(3, npoints=500)
+    #
+    #     axes = self.ax
+    #     # JES Missing code (many lines to make the graph)
+    #
+    #     self.canvas.draw()
     def DoPlot(self, Model):
         """
         Create the plot.
         :param Model:
         :return:
+        this function completed with the assistance of ChatGPT
         """
         headx, heady, headRSq = Model.LSFitHead.GetPlotInfo(3, npoints=500)
         effx, effy, effRSq = Model.LSFitEff.GetPlotInfo(3, npoints=500)
 
         axes = self.ax
-        # JES Missing code (many lines to make the graph)
+        axes.clear()  # Clear existing plots
+        axes.plot(headx, heady, label=f'Head Fit, R²={headRSq:.2f}')
+        axes.plot(effx, effy, label=f'Efficiency Fit, R²={effRSq:.2f}')
+        axes.scatter(Model.FlowData, Model.HeadData, c='blue', label='Head Data')
+        axes.scatter(Model.FlowData, Model.EffData, c='green', label='Efficiency Data')
+        axes.set_title('Pump Curve Analysis')
+        axes.set_xlabel(Model.FlowUnits)
+        axes.set_ylabel(f'{Model.HeadUnits}, {Model.EffUnits}')
+        axes.legend()
 
         self.canvas.draw()
 
