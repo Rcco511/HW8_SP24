@@ -210,8 +210,8 @@ class Pump_View():
         axes.set_ylabel(f'{Model.HeadUnits}, {Model.EffUnits}')
 
         # Adding a legend to the plot
-        axes.legend(loc='best')
-        # axes.legend(loc='bottom right')
+        axes.legend(loc='upper right')
+        # axes.legend(loc='center left')
 
         self.canvas.draw()
 
